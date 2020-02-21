@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # devise_for :users, :controllers => { registrations: 'registrations' }
-  # resources :tweeets
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
    namespace :api, defaults: {format: :json} do
     namespace :v1 do
@@ -16,4 +12,10 @@ Rails.application.routes.draw do
   end
   resources :tweeets
   root "tweeets#index"
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships
 end

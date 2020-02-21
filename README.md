@@ -1,36 +1,37 @@
-# README
+# Twitter App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Link of Application](#link)
+* [General Information ](#information)
+* [Instruction ](#instruction)
 
-Things you may want to cover:
+## General info
+a)​ Twitter-like app.
+b) Implement the functionality to follow/unfollow users and see tweets of users.
+	
+## Technologies
+Project is created with:
+* Ruby version: 2.6.3p62
+* Rails version: 6.0.2.1
+* Using rvm for managing ruby version
+	
+## link
+To run this project, install it locally using npm:
 
-* Ruby version
+* Heroku - 
+* Github - https://github.com/AVI4791/app_twitter
 
-* System dependencies
+## information 
 
-* Configuration
+* The models need to be named User and Tweet.
+* Login feature using Devise gem..
+* If user login as normail user he will able to see the user dashboard and can request for a leave and see status of its.
+* By default admin is created through seed.
 
-* Database creation
+## instruction 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-avinash@avinash:~/Desktop$ ruby -v
-ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-linux]
-avinash@avinash:~/Desktop$ rails -v
-Rails 6.0.2.1
-
-
-
-avinash@avinash:~/Desktop/app_twitter$ ruby -v
-ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-linux]
-avinash@avinash:~/Desktop/app_twitter$ rails -v
-Rails 6.0.2.1
-avinash@avinash:~/Desktop/app_twitter$ 
+* For login please use below credentials
+  email - admin@mail.com
+  password -password

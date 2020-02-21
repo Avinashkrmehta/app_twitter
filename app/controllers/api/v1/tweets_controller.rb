@@ -2,29 +2,21 @@ class Api::V1::TweetsController < ApplicationController
   before_action :set_tweeet, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /tweeets
-  # GET /tweeets.json
   def index
     @tweeets = Tweet.all.order("created_at DESC")
     @tweeet = Tweet.new
   end
 
-  # GET /tweeets/1
-  # GET /tweeets/1.json
   def show
   end
 
-  # GET /tweeets/new
   def new
     @tweeet = current_user.tweeets.build
   end
 
-  # GET /tweeets/1/edit
   def edit
   end
 
-  # POST /tweeets
-  # POST /tweeets.json
   def create
     @tweeet = current_user.tweeets.build(tweeet_params)
 
@@ -39,8 +31,6 @@ class Api::V1::TweetsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tweeets/1
-  # PATCH/PUT /tweeets/1.json
   def update
     respond_to do |format|
       if @tweeet.update(tweeet_params)
@@ -53,8 +43,6 @@ class Api::V1::TweetsController < ApplicationController
     end
   end
 
-  # DELETE /tweeets/1
-  # DELETE /tweeets/1.json
   def destroy
     @tweeet.destroy
     respond_to do |format|
@@ -64,12 +52,11 @@ class Api::V1::TweetsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_tweeet
       @tweeet = Tweet.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def tweet_params
       params.require(:tweeet).permit(:conetens)
     end
